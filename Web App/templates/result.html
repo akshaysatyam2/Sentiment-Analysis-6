@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Result</title>
+
+  <script src="https://kit.fontawesome.com/47101d2035.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    .center {
+      position: absolute;
+      text-align: center;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: rgb(230, 239, 245);
+    }
+  </style>
+</head>
+
+<body class="center">
+
+  {% if result == 'Joy' %}
+  <h1 style=" color: #fbe6a6; font-weight: 900;">
+    Joy<br>
+  </h1>
+
+  {% elif result == 'Anger' %}
+  <h1 style="color: rgb(212, 85, 85); font-weight: 900;">
+    Anger<br>
+  </h1>
+
+  {% elif result == 'Love' %}
+  <h1 style="color: rgb(255, 85, 157); font-weight: 900;">
+    Love<br>
+  </h1>
+
+  {% elif result == 'Fear' %}
+  <h1 style="color: #A020F0; font-weight: 900;">
+    Fear<br>
+  </h1>
+
+  {% elif result == 'Sadness' %}
+  <h1 style="color: gray; font-weight: 900;">
+    Sadness<br>
+  </h1>
+
+  {% elif result == 'Surprise' %}
+  <h1 style="color:#c9936f; font-weight: 900;">
+    Surprise<br>
+  </h1>
+
+  {% else %}
+  <h1 style="color: rgb(31, 15, 15); font-weight: 900;">ERROR</h1>
+  {% endif %}
+  <br>
+  <small> Want to recheck? <a href="{{ url_for('home') }}">Click</a></small>
+
+</body>
+
+</html>
