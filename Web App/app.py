@@ -31,10 +31,10 @@ def getPredictions(new_review):
     cv = pickle.load(open('SentimentAnalysisScaler.sav', 'rb'))
     loaded_model = tf.keras.models.load_model('SentimentAnalysisModel.h5')
 
-    # pf = ProfanityFilter()
-    # pf.censor_char = 'X'
-    # new_review = pf.censor(new_review)
-    # print("Review with removed profanity ", new_review)
+    pf = ProfanityFilter()
+    pf.censor_char = 'X'
+    new_review = pf.censor(new_review)
+    print("Review with removed profanity ", new_review)
 
     new_review = re.sub('[^a-zA-Z]', ' ', str(new_review))
     print(new_review)
